@@ -9,6 +9,7 @@ class ShiftSafetyRequest(BaseModel):
     foot_traffic: float = Field(..., ge=0.0, le=100.0, example=15.0)
 
 class ShiftSafetyResponse(BaseModel):
+    corridor_id: str = Field(..., json_schema_extra={"example": "Megenagna"})
     status: str = Field(..., example="Group / Escort Needed")
     risk_code: int = Field(..., example=1)
     badge_color: str = Field(..., example="orange")

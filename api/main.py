@@ -95,6 +95,7 @@ def predict_safety(payload: ShiftSafetyRequest):
     )
 
     return ShiftSafetyResponse(
+        corridor_id=payload.corridor_id,
         status=res["status"],
         risk_code=risk_code,
         badge_color=res["badge_color"],
