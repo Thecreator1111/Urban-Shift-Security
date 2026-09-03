@@ -31,12 +31,13 @@ except Exception as e:
 
 
 # 4. Root Health Check Endpoint
+# Root route for health check / ping
 @app.get("/")
 def read_root():
     return {
-        "project": "Urban Shift Safety",
-        "status": "Online",
-        "model_loaded": model is not None,
+        "status": "online",
+        "project": "Urban Shift Safety API",
+        "message": "Backend is active and ready for predictions.",
     }
 
 
